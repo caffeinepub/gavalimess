@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700;900&family=Figtree:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Warm saffron palette */
+    --background: 0.97 0.015 75;
+    --foreground: 0.2 0.03 50;
+
+    --card: 0.99 0.008 70;
+    --card-foreground: 0.2 0.03 50;
+
+    --popover: 0.99 0.008 70;
+    --popover-foreground: 0.2 0.03 50;
+
+    --primary: 0.62 0.16 42;
+    --primary-foreground: 0.99 0.005 70;
+
+    --secondary: 0.93 0.03 70;
+    --secondary-foreground: 0.3 0.05 50;
+
+    --muted: 0.93 0.02 70;
+    --muted-foreground: 0.52 0.04 55;
+
+    --accent: 0.42 0.1 195;
+    --accent-foreground: 0.97 0.01 195;
+
+    --destructive: 0.55 0.2 25;
+    --destructive-foreground: 0.99 0.005 25;
+
+    --success: 0.55 0.15 145;
+    --success-foreground: 0.97 0.01 145;
+
+    --warning: 0.72 0.18 75;
+    --warning-foreground: 0.2 0.03 70;
+
+    --border: 0.88 0.025 65;
+    --input: 0.88 0.025 65;
+    --ring: 0.62 0.16 42;
+
+    --radius: 0.75rem;
+
+    --chart-1: 0.62 0.16 42;
+    --chart-2: 0.42 0.1 195;
+    --chart-3: 0.55 0.15 145;
+    --chart-4: 0.55 0.2 25;
+    --chart-5: 0.72 0.18 75;
+
+    --sidebar: 0.25 0.04 45;
+    --sidebar-foreground: 0.93 0.02 65;
+    --sidebar-primary: 0.72 0.18 50;
+    --sidebar-primary-foreground: 0.99 0.005 65;
+    --sidebar-accent: 0.32 0.05 45;
+    --sidebar-accent-foreground: 0.93 0.02 65;
+    --sidebar-border: 0.32 0.05 45;
+    --sidebar-ring: 0.62 0.16 42;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .saffron-glow {
+    box-shadow: 0 0 40px oklch(0.72 0.18 50 / 0.15);
+  }
+  .ledger-row:nth-child(even) {
+    background: oklch(0.95 0.015 70 / 0.5);
+  }
+  .pattern-bg {
+    background-image: radial-gradient(circle at 20% 80%, oklch(0.72 0.18 50 / 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, oklch(0.42 0.1 195 / 0.06) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, oklch(0.55 0.15 145 / 0.04) 0%, transparent 70%);
+  }
+}
